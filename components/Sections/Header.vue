@@ -1,30 +1,18 @@
 <template>
   <header>
-    <div class="header__info">
-      <div class="container header__info-container">
-        <div class="header__navi">
-          About
-        </div>
-        <div class="header__navi">
-          Intro
-        </div>
-        <div class="header__navi">
-          Service
-        </div>
-        <div class="header__navi">
-          Columns
-        </div>
-        <div class="header__navi">
-          Recruit
-        </div>
-        <div class="header__navi">
-          Contact
-        </div>
-        <div class="header__navi">
-          ご家族の方へ<br />
-          写真観覧はこちら
-        </div>
-      </div>
+    <div id="ham-menu">
+      <ul class="menu">
+          <li class="menu-content">About</li>
+          <li class="menu-content">Intro</li>
+          <li class="menu-content">Service</li>
+          <li class="menu-content">Columns</li>
+          <li class="menu-content">Recruit</li>
+          <li class="menu-content">Contact</li>
+          <li class="menu-content">
+            <div>ご家族の方へ</div>
+            <div>写真観覧はこちら</div>
+          </li>
+      </ul>
     </div>
   </header>
 </template>
@@ -34,43 +22,60 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
-	&__info {
-		background-color: $background-primary;
-		padding: 1.5em 0;
-  }
-  
-  &__info-container {
-    display: flex;
-    justify-content: space-between;
+
+/*メニュー部分*/
+#ham-menu {
+    background-color: #fff; /*メニュー背景色*/
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px 40px; /*メニュー内部上下左右余白*/
+    position: fixed;
+    right: -300px; /*メニュー横幅①と合わせる*/
+    top: 0;
+    transition: transform 0.3s linear 0s; /*0.3s は変化するのにかかる時間*/
+    width: 300px; /*メニュー横幅①*/
+    z-index: 1000;
+}
+
+/*メニューアイコン部分は疑似要素で*/
+#ham-menu::before {
+    background-color: #fff; /*ボタン部分背景色*/
+    border-radius: 0 0 0 10px; /*左下角丸*/
+    color: #333; /*アイコン（フォント）色*/
+    content: "≡"; /*メニューアイコン*/
+    display: block;
+    font-size: 50px; /*アイコン（フォント）サイズ*/
+    height: 50px;
+    line-height: 50px; /*縦位置中央化*/
+    position: absolute;
+    right: 100%;
+    text-align: center;
+    top: 0;
+    width: 50px;
+}
+
+/*透過背景部分*/
+#menu-background {
+    background-color: #333; /*黒背景部分背景色*/
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 0.3s linear 0s; /*0.3s は変化するのにかかる時間*/
     width: 100%;
-    flex-direction: column;
+    z-index: -1;
+}
 
-    @media (min-width: $screen-sm){
-      flex-direction: row;
-    }
-  }
+/*hover 時の処理*/
+#ham-menu:hover {
+    transform: translate(-300px); /*メニュー横幅①と合わせる*/
+}
 
-	&__copyright {
-		text-align: center;
-		@media (min-width: $screen-sm) {
-			text-align: inherit;
-		}
-	}
-
-	&__top-page {
-		color: $text-negative;
-		display: block;
-		text-align: center;
-		line-height: 1;
-		-webkit-transition: 1s;
-		-moz-transition: 1s;
-    transition: 1s;
-    
-		@media (min-width: $screen-sm){
-			text-align: right;
-		}
-	}
+#ham-menu:hover + #menu-background {
+    opacity: 0.5; /*黒背景部分透過度*/
+    z-index: 999;
 }
 </style>
 
