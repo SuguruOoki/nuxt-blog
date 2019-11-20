@@ -4,9 +4,9 @@ const I18N = {
   locales: [
     {
       code: 'ja',
-      iso: 'es-ES',
+      iso: 'jp',
       name: 'Japanese',
-      file: 'es/index.js'
+      file: 'ja/index.js'
     },
     {
       code: 'en',
