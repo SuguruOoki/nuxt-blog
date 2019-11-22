@@ -3,7 +3,7 @@
 1.  **Clone this repository.**
 
     ```sh
-    git clone https://github.com/[repository name]
+    git clone https://github.com/SuguruOoki/nuxt-blog.git
     ```
 
 2.  **Start developing.**
@@ -11,7 +11,7 @@
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd [repository name]/
+    cd nuxt-blog/
     yarn install
     yarn dev
     ```
