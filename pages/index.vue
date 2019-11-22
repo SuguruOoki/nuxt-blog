@@ -29,9 +29,7 @@
         }
       })
     },
-    
     components: { BlogSection },
-
     transition: {
       name: 'slide-fade'
     },
@@ -43,7 +41,7 @@
           lang: this.$i18n.locale,
         },
         meta: [
-          { name: "author", content: "Marina Aisa" },
+          { name: "author", content: "Suguru Ohki" },
           { name: "description", property: "og:description", content: this.$t('indexPageHead.description'), hid: "description" },
           { property: "og:title", content: this.$t('indexPageHead.title') },
           { property: "og:image", content: this.ogImage },
