@@ -2,12 +2,12 @@
   <div class="layout">
     <Header/>
     <nuxt class="nuxt-content"/>
-    <Footer/>
+    <!-- <Footer/> -->
   </div>
 </template>
 <script>
-  import Footer from '~/components/Sections/Footer'
   import Header from '~/components/Sections/Header'
+  import Footer from '~/components/Sections/Footer'
 
   export default {
     components: {
