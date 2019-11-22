@@ -1,3 +1,4 @@
 export default [
-  'blog-use-vue-nuxt-markdown'
+  'blog-use-vue-nuxt-markdown',
+  'profile'
 ]
